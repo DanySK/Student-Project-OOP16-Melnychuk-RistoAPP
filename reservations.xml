@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Reservations xmlns="http://www.example.org/Reservations">
-    <Reservation id="1" name="ueieuwqi" email="ueiwue@de.de" phone="9381938" table="3" numberOfPersons="3" date="2017-07-20T20:45:00.000Z" menu="Pasta"/>
-    <Reservation id="2" name="schei" email="dalksdl@sa.de" phone="93090" table="1" numberOfPersons="2" date="2017-07-20T21:30:00.000Z" menu="Pasta"/>
-    <Reservation id="3" name="qweqw" email="dwd@sasd.de" phone="32321" table="3" numberOfPersons="4" date="2017-07-20T20:30:00.000Z" menu="Pasta"/>
-</Reservations>
