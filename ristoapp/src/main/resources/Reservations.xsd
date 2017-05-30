@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/Reservations" xmlns:tns="http://www.example.org/Reservations"
+	elementFormDefault="qualified">
+
+	<xs:complexType name="Reservation">
+	    <xs:attribute name="id" type="xs:positiveInteger" />
+		<xs:attribute name="name" type="xs:string" />
+		<xs:attribute name="email" type="xs:string" />
+		<xs:attribute name="phone" type="xs:string" />
+		<xs:attribute name="table" type="xs:positiveInteger" />
+		<xs:attribute name="numberOfPersons" type="xs:positiveInteger" />
+		<xs:attribute name="date" type="xs:date" />
+		<xs:attribute name="menu" type="xs:string" />
+	</xs:complexType>
+
+	<xs:element name="Reservations">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Reservation" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
