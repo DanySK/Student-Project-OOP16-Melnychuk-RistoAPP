@@ -1,0 +1,130 @@
+Found a 14 line (210 tokens) duplication in the following files: 
+Starting at line 31 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/CancellationForm.java
+Starting at line 33 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/ModificationForm.java
+
+	public CancellationForm(CancellationModelView modelView, MasterView masterView) {
+		super(masterView);
+		this.modelView = modelView;
+		this.modelView.initializeWithSelectedReservation();
+		this.reservationId = this.modelView.getReservation().getId();
+		this.nameField.setText(this.modelView.getReservation().getName());
+		this.emailField.setText(this.modelView.getReservation().getEmail());
+		this.phoneField.setText(this.modelView.getReservation().getPhone());
+		this.timeField.setText(Utilities.getFormattedTime(this.modelView.getReservation().getDate()));
+		this.dateField.setText(Utilities.getFormattedDate(this.modelView.getReservation().getDate()));
+		this.tableField.setText(this.modelView.getReservation().getTable().toString());
+		this.menuField.setText(this.modelView.getReservation().getMenu());
+		this.numberOfPersonsField.setText(this.modelView.getReservation().getNumberOfPersons().toString());
+		modelView.bind(this.reservationId.intValue());
+=====================================================================
+Found a 10 line (71 tokens) duplication in the following files: 
+Starting at line 23 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/controller/CancellationModelView.java
+Starting at line 32 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/controller/ModificationModelView.java
+
+		this.model.cancelReservation(this.reservationId);
+		this.setChanged();
+		this.notifyObservers(ApplicationState.PageTransition.TO_PAGE_BASE);
+	}
+
+	public void toReservation() {
+		this.setChanged();
+		Integer selectedReservationid = (Integer) DataContainer.getData(DataContainer.SELECTED_RESERVATION_ID);
+		if ((selectedReservationid == null) || (selectedReservationid.intValue() == 0)) {
+			DataContainer.setData(DataContainer.ERROR, DataContainer.ERROR_CANCEL_NO_SELECTED_ID);
+=====================================================================
+Found a 4 line (69 tokens) duplication in the following files: 
+Starting at line 45 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/ModificationForm.java
+Starting at line 47 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/ViewForm.java
+
+		this.numberOfPersonsField.setText(this.modelView.getReservation().getNumberOfPersons().toString());
+		modelView.bind(this.reservationId.intValue(), this.nameField.getText(), this.emailField.getText(),
+				this.phoneField.getText(), this.tableField.getText(), this.dateField.getText(),
+				this.numberOfPersonsField.getText(), this.menuField.getText());
+=====================================================================
+Found a 20 line (62 tokens) duplication in the following files: 
+Starting at line 268 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/MasterView.java
+Starting at line 292 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/MasterView.java
+Starting at line 317 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/MasterView.java
+Starting at line 342 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/MasterView.java
+
+		} else if (arg != null && arg == ApplicationState.PageTransition.TO_PAGE_BASE) {
+			ApplicationState.Page state = ApplicationState.getApplicationState();
+			switch (state) {
+			case INITIAL:
+			case PAGE_BASE:
+				remove(baseView);
+				break;
+			case PAGE_DELETE:
+				remove(cancellationForm);
+				break;
+			case PAGE_MODIFY:
+				remove(modifyForm);
+				break;
+			case PAGE_NEW:
+				remove(reservationForm);
+				break;
+			case PAGE_VIEW:
+				remove(viewForm);
+			}
+			this.baseView = new BaseView();
+=====================================================================
+Found a 6 line (57 tokens) duplication in the following files: 
+Starting at line 190 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/BaseForm.java
+Starting at line 196 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/BaseForm.java
+
+			isError = val.validateTime(this.dateField.getText(), this.timeField.getText());
+			if (!isError)
+				isError = val.validateIsReservationAvailable(this.dateField.getText(), this.timeField.getText(),
+						this.getTableField().getText());
+		}
+		if (e.getComponent().getName().equals("Date")) {
+=====================================================================
+Found a 7 line (57 tokens) duplication in the following files: 
+Starting at line 31 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/CancellationForm.java
+Starting at line 33 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/ModificationForm.java
+Starting at line 29 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/ViewForm.java
+
+	public CancellationForm(CancellationModelView modelView, MasterView masterView) {
+		super(masterView);
+		this.modelView = modelView;
+		this.modelView.initializeWithSelectedReservation();
+		this.reservationId = this.modelView.getReservation().getId();
+		this.nameField.setText(this.modelView.getReservation().getName());
+		this.emailField.setText(this.modelView.getReservation().getEmail());
+=====================================================================
+Found a 8 line (56 tokens) duplication in the following files: 
+Starting at line 25 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/controller/CancellationModelView.java
+Starting at line 34 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/controller/ModificationModelView.java
+Starting at line 13 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/controller/ViewModelView.java
+
+		this.notifyObservers(ApplicationState.PageTransition.TO_PAGE_BASE);
+	}
+
+	public void toReservation() {
+		this.setChanged();
+		Integer selectedReservationid = (Integer) DataContainer.getData(DataContainer.SELECTED_RESERVATION_ID);
+		if ((selectedReservationid == null) || (selectedReservationid.intValue() == 0)) {
+			DataContainer.setData(DataContainer.ERROR, DataContainer.ERROR_CANCEL_NO_SELECTED_ID);
+=====================================================================
+Found a 15 line (51 tokens) duplication in the following files: 
+Starting at line 244 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/MasterView.java
+Starting at line 268 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/MasterView.java
+Starting at line 292 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/MasterView.java
+Starting at line 317 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/MasterView.java
+Starting at line 342 of /home/danysk/Dropbox/Didattica/2016-17/Programmazione ad Oggetti/Progetti/oop16-melnychuk-oleksandr-ristoapp/ristoapp/src/main/java/view/MasterView.java
+
+		if (arg != null && arg == ApplicationState.PageTransition.TO_PAGE_NEW) {
+			ApplicationState.Page state = ApplicationState.getApplicationState();
+			switch (state) {
+			case INITIAL:
+			case PAGE_BASE:
+				remove(baseView);
+				break;
+			case PAGE_DELETE:
+				remove(cancellationForm);
+				break;
+			case PAGE_MODIFY:
+				remove(modifyForm);
+				break;
+			case PAGE_NEW:
+				remove(reservationForm);

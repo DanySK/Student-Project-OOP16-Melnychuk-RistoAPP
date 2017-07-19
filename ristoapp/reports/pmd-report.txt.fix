@@ -1,0 +1,348 @@
+Violated encapsulation: 19
+src/main/java/controller/BaseModelView.java:22:	Use explicit scoping instead of the default package private level
+src/main/java/controller/CancellationModelView.java:12:	Use explicit scoping instead of the default package private level
+src/main/java/model/ReservationBean.java:11:	Use explicit scoping instead of the default package private level
+src/main/java/model/ReservationBean.java:12:	Use explicit scoping instead of the default package private level
+src/main/java/model/ReservationBean.java:13:	Use explicit scoping instead of the default package private level
+src/main/java/view/BaseForm.java:36:	Use explicit scoping instead of the default package private level
+src/main/java/view/CancellationForm.java:25:	Use explicit scoping instead of the default package private level
+src/main/java/view/CancellationForm.java:27:	Use explicit scoping instead of the default package private level
+src/main/java/view/CancellationForm.java:29:	Use explicit scoping instead of the default package private level
+src/main/java/view/MasterView.java:399:	Use explicit scoping instead of the default package private level
+src/main/java/view/MasterView.java:400:	Use explicit scoping instead of the default package private level
+src/main/java/view/ModificationForm.java:27:	Use explicit scoping instead of the default package private level
+src/main/java/view/ModificationForm.java:29:	Use explicit scoping instead of the default package private level
+src/main/java/view/ModificationForm.java:31:	Use explicit scoping instead of the default package private level
+src/main/java/view/NewReservationForm.java:21:	Use explicit scoping instead of the default package private level
+src/main/java/view/NewReservationForm.java:22:	Use explicit scoping instead of the default package private level
+src/main/java/view/ViewForm.java:23:	Use explicit scoping instead of the default package private level
+src/main/java/view/ViewForm.java:25:	Use explicit scoping instead of the default package private level
+src/main/java/view/ViewForm.java:27:	Use explicit scoping instead of the default package private level
+
+Poor design: 15
+src/main/java/controller/AbstractModelView.java:36:	Rather than using a lot of String arguments, consider using a container object for those values.
+src/main/java/controller/ModificationModelView.java:30:	Rather than using a lot of String arguments, consider using a container object for those values.
+src/main/java/controller/ReservationModelView.java:21:	Rather than using a lot of String arguments, consider using a container object for those values.
+src/main/java/model/DataContainer.java:9:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/main/java/model/ReservationService.java:14:	Rather than using a lot of String arguments, consider using a container object for those values.
+src/main/java/model/ReservationService.java:19:	Rather than using a lot of String arguments, consider using a container object for those values.
+src/main/java/model/XMLReservationService.java:59:	Rather than using a lot of String arguments, consider using a container object for those values.
+src/main/java/model/XMLReservationService.java:151:	Rather than using a lot of String arguments, consider using a container object for those values.
+src/main/java/util/ApplicationState.java:9:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/main/java/util/ApplicationState.java:26:	Singleton is not thread safe
+src/main/java/util/ApplicationState.java:38:	Singleton is not thread safe
+src/main/java/util/FormValidator.java:88:	The String literal "TRUE" appears 20 times in this file; the first occurrence is on line 88
+src/main/java/view/BaseForm.java:216:	The String literal "TRUE" appears 8 times in this file; the first occurrence is on line 216
+src/main/java/view/BaseView.java:33:	The field name indicates a constant but its modifiers do not
+src/main/java/view/BaseView.java:34:	Avoid unused private fields such as 'util'.
+
+Very bad code practices and potential bugs: 6
+src/main/java/util/Utilities.java:103:	Avoid unused local variables such as 'tz'.
+src/main/java/view/Application.java:37:	Avoid unused local variables such as 'masterView'.
+src/main/java/view/BaseForm.java:42:	Overridable method 'initializeUI' called during object construction
+src/main/java/view/BaseView.java:43:	Overridable method 'buildLayout' called during object construction
+src/main/java/view/BaseView.java:72:	Avoid unused local variables such as 'rowIndex'.
+src/main/java/view/BaseView.java:73:	Avoid unused local variables such as 'colIndex'.
+
+Bad exception handling: 2
+src/main/java/model/XMLReservationService.java:109:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/model/XMLReservationService.java:119:	A method/constructor shouldnt explicitly throw java.lang.Exception
+
+Portability issues: 0
+
+Bad naming: 4
+src/main/java/util/FormValidator.java:116:	Unnecessary use of fully qualified name 'java.util.regex.Pattern' due to existing import 'java.util.regex.Pattern'
+src/main/java/util/FormValidator.java:116:	Unnecessary use of fully qualified name 'java.util.regex.Pattern.compile' due to existing import 'java.util.regex.Pattern'
+src/main/java/util/Utilities.java:53:	Unnecessary use of fully qualified name 'java.awt.Image.SCALE_SMOOTH' due to existing import 'java.awt.Image'
+src/main/java/util/Utilities.java:58:	Unnecessary use of fully qualified name 'java.awt.Image.SCALE_SMOOTH' due to existing import 'java.awt.Image'
+
+Bad code practices: 15
+src/main/java/controller/CancellationModelView.java:14:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/controller/ModificationModelView.java:14:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/controller/ViewModelView.java:12:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/model/DataContainer.java:30:	Avoid using implementation types like 'HashMap'; use the interface instead
+src/main/java/model/XMLReservationService.java:76:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/main/java/model/domain/ObjectFactory.java:31:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/model/domain/ObjectFactory.java:31:	Document empty constructor
+src/main/java/util/FormValidator.java:273:	Avoid declaring a variable if it is unreferenced before a possible exit point.
+src/main/java/util/Utilities.java:21:	Avoid unused imports such as 'javax.xml.datatype.DatatypeConstants'
+src/main/java/util/Utilities.java:129:	When instantiating a SimpleDateFormat object, specify a Locale
+src/main/java/view/MasterView.java:246:	Switch statements should have a default label
+src/main/java/view/MasterView.java:270:	Switch statements should have a default label
+src/main/java/view/MasterView.java:294:	Switch statements should have a default label
+src/main/java/view/MasterView.java:319:	Switch statements should have a default label
+src/main/java/view/MasterView.java:344:	Switch statements should have a default label
+
+Magic numbers: 0
+
+Use modern Java: 0
+
+Performance and resource waste: 10
+src/main/java/controller/BaseModelView.java:32:	Avoid instantiating Integer objects. Call Integer.valueOf() instead.
+src/main/java/controller/BaseModelView.java:35:	Avoid instantiating Integer objects. Call Integer.valueOf() instead.
+src/main/java/controller/CancellationModelView.java:12:	Avoid using redundant field initializer for 'reservationId'
+src/main/java/model/XMLReservationService.java:78:	Avoid instantiating Integer objects. Call Integer.valueOf() instead.
+src/main/java/model/XMLReservationService.java:80:	Avoid instantiating Integer objects. Call Integer.valueOf() instead.
+src/main/java/model/XMLReservationService.java:115:	Consider simply returning the value vs storing it in local variable 'reservations'
+src/main/java/util/Utilities.java:124:	Consider simply returning the value vs storing it in local variable 'd'
+src/main/java/util/Utilities.java:131:	Consider simply returning the value vs storing it in local variable 'formattedDate'
+src/main/java/view/BaseView.java:33:	Avoid using redundant field initializer for 'INDEX'
+src/main/java/view/BaseView.java:91:	Avoid instantiating Integer objects. Call Integer.valueOf() instead.
+
+Potentially dangerous side effects: 0
+
+Use final: 231
+src/main/java/controller/AbstractModelView.java:36:	Parameter 'date' is not assigned and could be declared final
+src/main/java/controller/AbstractModelView.java:36:	Parameter 'email' is not assigned and could be declared final
+src/main/java/controller/AbstractModelView.java:36:	Parameter 'id' is not assigned and could be declared final
+src/main/java/controller/AbstractModelView.java:36:	Parameter 'name' is not assigned and could be declared final
+src/main/java/controller/AbstractModelView.java:36:	Parameter 'numberOfPersons' is not assigned and could be declared final
+src/main/java/controller/AbstractModelView.java:36:	Parameter 'phone' is not assigned and could be declared final
+src/main/java/controller/AbstractModelView.java:36:	Parameter 'table' is not assigned and could be declared final
+src/main/java/controller/AbstractModelView.java:37:	Parameter 'menu' is not assigned and could be declared final
+src/main/java/controller/AbstractModelView.java:71:	Parameter 'reservation' is not assigned and could be declared final
+src/main/java/controller/AbstractModelView.java:79:	Local variable 'id' could be declared final
+src/main/java/controller/AbstractModelView.java:80:	Local variable 'aReservation' could be declared final
+src/main/java/controller/BaseModelView.java:29:	Parameter 'command' is not assigned and could be declared final
+src/main/java/controller/BaseModelView.java:49:	Local variable 'ress' could be declared final
+src/main/java/controller/BaseModelView.java:51:	Local variable 'res' could be declared final
+src/main/java/controller/BaseModelView.java:52:	Local variable 'rb' could be declared final
+src/main/java/controller/CancellationModelView.java:18:	Parameter 'id' is not assigned and could be declared final
+src/main/java/controller/CancellationModelView.java:30:	Local variable 'selectedReservationid' could be declared final
+src/main/java/controller/ModificationModelView.java:30:	Parameter 'date' is not assigned and could be declared final
+src/main/java/controller/ModificationModelView.java:30:	Parameter 'email' is not assigned and could be declared final
+src/main/java/controller/ModificationModelView.java:30:	Parameter 'id' is not assigned and could be declared final
+src/main/java/controller/ModificationModelView.java:30:	Parameter 'name' is not assigned and could be declared final
+src/main/java/controller/ModificationModelView.java:30:	Parameter 'phone' is not assigned and could be declared final
+src/main/java/controller/ModificationModelView.java:30:	Parameter 'table' is not assigned and could be declared final
+src/main/java/controller/ModificationModelView.java:31:	Parameter 'menu' is not assigned and could be declared final
+src/main/java/controller/ModificationModelView.java:31:	Parameter 'numberOfPersons' is not assigned and could be declared final
+src/main/java/controller/ModificationModelView.java:39:	Local variable 'selectedReservationid' could be declared final
+src/main/java/controller/ReservationModelView.java:21:	Parameter 'date' is not assigned and could be declared final
+src/main/java/controller/ReservationModelView.java:21:	Parameter 'email' is not assigned and could be declared final
+src/main/java/controller/ReservationModelView.java:21:	Parameter 'name' is not assigned and could be declared final
+src/main/java/controller/ReservationModelView.java:21:	Parameter 'phone' is not assigned and could be declared final
+src/main/java/controller/ReservationModelView.java:21:	Parameter 'table' is not assigned and could be declared final
+src/main/java/controller/ReservationModelView.java:21:	Parameter 'time' is not assigned and could be declared final
+src/main/java/controller/ReservationModelView.java:22:	Parameter 'menu' is not assigned and could be declared final
+src/main/java/controller/ReservationModelView.java:22:	Parameter 'numberOfPersons' is not assigned and could be declared final
+src/main/java/controller/ViewModelView.java:18:	Local variable 'selectedReservationid' could be declared final
+src/main/java/model/DataContainer.java:40:	Parameter 'key' is not assigned and could be declared final
+src/main/java/model/DataContainer.java:44:	Parameter 'o' is not assigned and could be declared final
+src/main/java/model/DataContainer.java:44:	Parameter 's' is not assigned and could be declared final
+src/main/java/model/DataContainer.java:48:	Parameter 'key' is not assigned and could be declared final
+src/main/java/model/ReservationBean.java:19:	Parameter 'id' is not assigned and could be declared final
+src/main/java/model/ReservationBean.java:27:	Parameter 'name' is not assigned and could be declared final
+src/main/java/model/ReservationBean.java:35:	Parameter 'email' is not assigned and could be declared final
+src/main/java/model/ReservationBean.java:43:	Parameter 'phone' is not assigned and could be declared final
+src/main/java/model/ReservationBean.java:51:	Parameter 'menu' is not assigned and could be declared final
+src/main/java/model/ReservationBean.java:59:	Parameter 'table' is not assigned and could be declared final
+src/main/java/model/ReservationBean.java:67:	Parameter 'numberOfPersons' is not assigned and could be declared final
+src/main/java/model/ReservationBean.java:75:	Parameter 'date' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:39:	The Logger variable declaration does not contain the static and final modifiers
+src/main/java/model/XMLReservationService.java:47:	Local variable 'writer' could be declared final
+src/main/java/model/XMLReservationService.java:59:	Parameter 'date' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:59:	Parameter 'email' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:59:	Parameter 'name' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:59:	Parameter 'numberOfPersons' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:59:	Parameter 'phone' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:59:	Parameter 'table' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:60:	Parameter 'menu' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:61:	Local variable 'reservation' could be declared final
+src/main/java/model/XMLReservationService.java:70:	Local variable 'reservations' could be declared final
+src/main/java/model/XMLReservationService.java:72:	Local variable 'ids' could be declared final
+src/main/java/model/XMLReservationService.java:73:	Local variable 'res' could be declared final
+src/main/java/model/XMLReservationService.java:94:	Local variable 'reservations' could be declared final
+src/main/java/model/XMLReservationService.java:112:	Local variable 'f' could be declared final
+src/main/java/model/XMLReservationService.java:119:	Parameter 'reservations' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:122:	Local variable 'f' could be declared final
+src/main/java/model/XMLReservationService.java:130:	Parameter 'id' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:131:	Local variable 'reservations' could be declared final
+src/main/java/model/XMLReservationService.java:132:	Local variable 'it' could be declared final
+src/main/java/model/XMLReservationService.java:135:	Local variable 'res' could be declared final
+src/main/java/model/XMLReservationService.java:136:	Local variable 'i' could be declared final
+src/main/java/model/XMLReservationService.java:151:	Parameter 'date' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:151:	Parameter 'email' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:151:	Parameter 'id' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:151:	Parameter 'name' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:151:	Parameter 'phone' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:151:	Parameter 'table' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:152:	Parameter 'menu' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:152:	Parameter 'numberOfPersons' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:153:	Local variable 'modifiedReservations' could be declared final
+src/main/java/model/XMLReservationService.java:154:	Local variable 'reservations' could be declared final
+src/main/java/model/XMLReservationService.java:155:	Local variable 'res' could be declared final
+src/main/java/model/XMLReservationService.java:156:	Local variable 'i' could be declared final
+src/main/java/model/XMLReservationService.java:177:	Parameter 'id' is not assigned and could be declared final
+src/main/java/model/XMLReservationService.java:178:	Local variable 'reservations' could be declared final
+src/main/java/model/XMLReservationService.java:179:	Local variable 'res' could be declared final
+src/main/java/model/XMLReservationService.java:180:	Local variable 'i' could be declared final
+src/main/java/model/domain/Reservation.java:89:	Parameter 'value' is not assigned and could be declared final
+src/main/java/model/domain/Reservation.java:113:	Parameter 'value' is not assigned and could be declared final
+src/main/java/model/domain/Reservation.java:137:	Parameter 'value' is not assigned and could be declared final
+src/main/java/model/domain/Reservation.java:161:	Parameter 'value' is not assigned and could be declared final
+src/main/java/model/domain/Reservation.java:185:	Parameter 'value' is not assigned and could be declared final
+src/main/java/model/domain/Reservation.java:209:	Parameter 'value' is not assigned and could be declared final
+src/main/java/model/domain/Reservation.java:233:	Parameter 'value' is not assigned and could be declared final
+src/main/java/model/domain/Reservation.java:257:	Parameter 'value' is not assigned and could be declared final
+src/main/java/util/ApplicationState.java:37:	Parameter 'page' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:19:	Parameter 'form' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:65:	Parameter 's' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:80:	Parameter 's' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:91:	Local variable 'p' could be declared final
+src/main/java/util/FormValidator.java:92:	Local variable 'hasSpecialChar' could be declared final
+src/main/java/util/FormValidator.java:108:	Parameter 's' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:115:	Local variable 'ePattern' could be declared final
+src/main/java/util/FormValidator.java:116:	Local variable 'p' could be declared final
+src/main/java/util/FormValidator.java:117:	Local variable 'm' could be declared final
+src/main/java/util/FormValidator.java:118:	Local variable 'ok' could be declared final
+src/main/java/util/FormValidator.java:134:	Parameter 's' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:140:	Local variable 'p' could be declared final
+src/main/java/util/FormValidator.java:141:	Local variable 'hasSpecialChar' could be declared final
+src/main/java/util/FormValidator.java:157:	Parameter 's' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:187:	Parameter 's' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:218:	Parameter 's' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:224:	Local variable 'date' could be declared final
+src/main/java/util/FormValidator.java:241:	Parameter 'date' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:241:	Parameter 'time' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:253:	Local variable 'data' could be declared final
+src/main/java/util/FormValidator.java:271:	Parameter 'date' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:271:	Parameter 'table' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:271:	Parameter 'time' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:273:	Local variable 'tavolo' could be declared final
+src/main/java/util/FormValidator.java:274:	Local variable 'localDateTime' could be declared final
+src/main/java/util/FormValidator.java:277:	Local variable 'modelView' could be declared final
+src/main/java/util/FormValidator.java:278:	Local variable 'reservations' could be declared final
+src/main/java/util/FormValidator.java:280:	Local variable 'rb' could be declared final
+src/main/java/util/FormValidator.java:281:	Local variable 'diff' could be declared final
+src/main/java/util/FormValidator.java:300:	Parameter 's' is not assigned and could be declared final
+src/main/java/util/FormValidator.java:306:	Local variable 'p' could be declared final
+src/main/java/util/FormValidator.java:307:	Local variable 'hasSpecialChar' could be declared final
+src/main/java/util/Utilities.java:39:	The Logger variable declaration does not contain the static and final modifiers
+src/main/java/util/Utilities.java:49:	Parameter 's' is not assigned and could be declared final
+src/main/java/util/Utilities.java:51:	Local variable 'icon' could be declared final
+src/main/java/util/Utilities.java:52:	Local variable 'img' could be declared final
+src/main/java/util/Utilities.java:53:	Local variable 'newimg' could be declared final
+src/main/java/util/Utilities.java:56:	Local variable 'icon' could be declared final
+src/main/java/util/Utilities.java:57:	Local variable 'img' could be declared final
+src/main/java/util/Utilities.java:58:	Local variable 'newimg' could be declared final
+src/main/java/util/Utilities.java:66:	Parameter 's' is not assigned and could be declared final
+src/main/java/util/Utilities.java:68:	Local variable 'format' could be declared final
+src/main/java/util/Utilities.java:77:	Parameter 'date' is not assigned and could be declared final
+src/main/java/util/Utilities.java:77:	Parameter 'time' is not assigned and could be declared final
+src/main/java/util/Utilities.java:79:	Local variable 'concatenatedDateAndTime' could be declared final
+src/main/java/util/Utilities.java:80:	Local variable 'format' could be declared final
+src/main/java/util/Utilities.java:89:	Parameter 'time' is not assigned and could be declared final
+src/main/java/util/Utilities.java:98:	Parameter 'date' is not assigned and could be declared final
+src/main/java/util/Utilities.java:99:	Local variable 'cal' could be declared final
+src/main/java/util/Utilities.java:103:	Local variable 'tz' could be declared final
+src/main/java/util/Utilities.java:118:	Parameter 'calendar' is not assigned and could be declared final
+src/main/java/util/Utilities.java:123:	Local variable 'd' could be declared final
+src/main/java/util/Utilities.java:127:	Parameter 'date' is not assigned and could be declared final
+src/main/java/util/Utilities.java:128:	Local variable 'FORMATER' could be declared final
+src/main/java/util/Utilities.java:129:	Local variable 'format' could be declared final
+src/main/java/util/Utilities.java:130:	Local variable 'formattedDate' could be declared final
+src/main/java/util/Utilities.java:134:	Parameter 'date' is not assigned and could be declared final
+src/main/java/util/Utilities.java:135:	Local variable 'FORMATER' could be declared final
+src/main/java/util/Utilities.java:136:	Local variable 'format' could be declared final
+src/main/java/util/Utilities.java:142:	Parameter 'i' is not assigned and could be declared final
+src/main/java/util/Utilities.java:143:	Local variable 'l' could be declared final
+src/main/java/view/Application.java:17:	Parameter 'args' is not assigned and could be declared final
+src/main/java/view/Application.java:37:	Local variable 'masterView' could be declared final
+src/main/java/view/BaseForm.java:38:	The Logger variable declaration does not contain the static and final modifiers
+src/main/java/view/BaseForm.java:171:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/BaseForm.java:211:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/BaseView.java:35:	Private field 'modelView' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/view/BaseView.java:48:	Local variable 'reservations' could be declared final
+src/main/java/view/BaseView.java:51:	Local variable 'rb' could be declared final
+src/main/java/view/BaseView.java:52:	Local variable 'row' could be declared final
+src/main/java/view/BaseView.java:57:	Local variable 'columnNames' could be declared final
+src/main/java/view/BaseView.java:59:	Local variable 'table' could be declared final
+src/main/java/view/BaseView.java:60:	Local variable 'dimension' could be declared final
+src/main/java/view/BaseView.java:72:	Local variable 'rowIndex' could be declared final
+src/main/java/view/BaseView.java:73:	Local variable 'colIndex' could be declared final
+src/main/java/view/BaseView.java:76:	Local variable 'rowSM' could be declared final
+src/main/java/view/BaseView.java:79:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/BaseView.java:84:	Local variable 'lsm' could be declared final
+src/main/java/view/BaseView.java:88:	Local variable 'selectedRow' could be declared final
+src/main/java/view/BaseView.java:89:	Local variable 'model' could be declared final
+src/main/java/view/BaseView.java:90:	Local variable 'id' could be declared final
+src/main/java/view/BaseView.java:95:	Local variable 'scrp' could be declared final
+src/main/java/view/BaseView.java:102:	Parameter 'arg' is not assigned and could be declared final
+src/main/java/view/BaseView.java:102:	Parameter 'o' is not assigned and could be declared final
+src/main/java/view/CancellationForm.java:31:	Parameter 'masterView' is not assigned and could be declared final
+src/main/java/view/CancellationForm.java:31:	Parameter 'modelView' is not assigned and could be declared final
+src/main/java/view/CancellationForm.java:52:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/CancellationForm.java:57:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/MasterView.java:64:	The Logger variable declaration does not contain the static and final modifiers
+src/main/java/view/MasterView.java:84:	Local variable 'menubar' could be declared final
+src/main/java/view/MasterView.java:85:	Local variable 'file' could be declared final
+src/main/java/view/MasterView.java:86:	Local variable 'menuItem1' could be declared final
+src/main/java/view/MasterView.java:87:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/MasterView.java:91:	Local variable 'menuItem2' could be declared final
+src/main/java/view/MasterView.java:92:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/MasterView.java:96:	Local variable 'menuItem3' could be declared final
+src/main/java/view/MasterView.java:97:	Local variable 'menuItem3Listener' could be declared final
+src/main/java/view/MasterView.java:142:	Parameter 'hideButtons' is not assigned and could be declared final
+src/main/java/view/MasterView.java:142:	Parameter 'isInitial' is not assigned and could be declared final
+src/main/java/view/MasterView.java:151:	Local variable 'label' could be declared final
+src/main/java/view/MasterView.java:161:	Local variable 'newImageUri' could be declared final
+src/main/java/view/MasterView.java:162:	Local variable 'modifyImageUri' could be declared final
+src/main/java/view/MasterView.java:163:	Local variable 'deleteImageUri' could be declared final
+src/main/java/view/MasterView.java:164:	Local variable 'viewImageUri' could be declared final
+src/main/java/view/MasterView.java:181:	Local variable 'newBtn' could be declared final
+src/main/java/view/MasterView.java:184:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/MasterView.java:188:	Local variable 'modifyBtn' could be declared final
+src/main/java/view/MasterView.java:191:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/MasterView.java:195:	Local variable 'deleteBtn' could be declared final
+src/main/java/view/MasterView.java:198:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/MasterView.java:202:	Local variable 'viewBtn' could be declared final
+src/main/java/view/MasterView.java:205:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/MasterView.java:210:	Local variable 'label' could be declared final
+src/main/java/view/MasterView.java:234:	Parameter 'arg' is not assigned and could be declared final
+src/main/java/view/MasterView.java:234:	Parameter 'o' is not assigned and could be declared final
+src/main/java/view/MasterView.java:245:	Local variable 'state' could be declared final
+src/main/java/view/MasterView.java:269:	Local variable 'state' could be declared final
+src/main/java/view/MasterView.java:293:	Local variable 'state' could be declared final
+src/main/java/view/MasterView.java:318:	Local variable 'state' could be declared final
+src/main/java/view/MasterView.java:343:	Local variable 'state' could be declared final
+src/main/java/view/MasterView.java:371:	Local variable 'error' could be declared final
+src/main/java/view/MasterView.java:402:	Parameter 'frame' is not assigned and could be declared final
+src/main/java/view/MasterView.java:402:	Parameter 'text' is not assigned and could be declared final
+src/main/java/view/MasterView.java:407:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/ModificationForm.java:33:	Parameter 'masterView' is not assigned and could be declared final
+src/main/java/view/ModificationForm.java:33:	Parameter 'modelView' is not assigned and could be declared final
+src/main/java/view/ModificationForm.java:56:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/ModificationForm.java:58:	Local variable 'reservationDate' could be declared final
+src/main/java/view/ModificationForm.java:67:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/NewReservationForm.java:24:	Parameter 'masterView' is not assigned and could be declared final
+src/main/java/view/NewReservationForm.java:24:	Parameter 'modelView' is not assigned and could be declared final
+src/main/java/view/NewReservationForm.java:37:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/NewReservationForm.java:47:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/NewReservationForm.java:59:	Parameter 'e' is not assigned and could be declared final
+src/main/java/view/ViewForm.java:29:	Parameter 'masterView' is not assigned and could be declared final
+src/main/java/view/ViewForm.java:29:	Parameter 'modelView' is not assigned and could be declared final
+src/main/java/view/ViewForm.java:55:	Parameter 'e' is not assigned and could be declared final
+
+Complex code: 0
+
+Concurrency issues: 0
+
+Testing issues: 0
+
+Android-specific issues: 0
+
+Javadoc issues: 0
+
+Bad indentation: 0
+
+Inconsistent spacing: 0
+
+Minor issues: 0
+
+Other errors: 4
+src/main/java/view/Application.java:23:	Avoid printStackTrace(); use a logger call instead.
+src/main/java/view/Application.java:25:	Avoid printStackTrace(); use a logger call instead.
+src/main/java/view/Application.java:27:	Avoid printStackTrace(); use a logger call instead.
+src/main/java/view/Application.java:29:	Avoid printStackTrace(); use a logger call instead.
+
